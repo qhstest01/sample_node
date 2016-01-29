@@ -33,6 +33,6 @@ integrations:
   hub:
     - integrationName: ship-docker
       type: docker
-      branches:
-        only:
-          - drydock/image
+      #branches:
+       # only:
+        #  - drydock/image
