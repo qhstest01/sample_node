@@ -4,6 +4,10 @@ language: node_js
 # Version number
 node_js:
   - 0.12
+env:
+ - M1=one
+ - M2=two
+ - M3=three
   
   
 
@@ -16,6 +20,7 @@ build:
 
   ci:
     - echo "Hello, World!"
+    - echo $M1 and $M2 and $M3
 
   pre_ci:
     - echo "this is master branch with preci"
