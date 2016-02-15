@@ -1,40 +1,24 @@
 # Language setting
 language: node_js
 
-
 # Version number
 node_js:
-  - "0.12"
-
-env:
-  global:
-    - FOO=FUBU
-
-  matrix:
-    - M1=one
+  - 0.12
 
 build:
-  pre_ci:
-    - docker build -t=shippabledocker/sample_node .
-
   pre_ci_boot:
-    image_name: shippabledocker/sample_node
+    image_name: kanthchandra/sample_node
     image_tag: latest
-    pull: false
+    pull: true
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
 
-
   ci:
-    - ps -eax
-    - ls -al
+    - echo "Hello, World!"
+
+  pre_ci:
+    - echo "this is master branch with preci"
 
   post_ci:
-    - docker push shippabledocker/sample_node
-
-integrations:
-  hub:
-    - integrationName: ship-docker
-      type: docker
-      branches:
-        only:
-          - master
+    - ls -a
+    - pwd
+    - sleep 2m
