@@ -9,14 +9,8 @@ node_js:
  # -# "5.0"
 git:
  submodules: false
-#services:
- # - elasticsearch
-  #- couchdb
-  #- rethinkdb
-  #- elasticsearch
- # - memcached
- # - neo4j
-  #- mongodb
+services:
+ - cassandra
   
 
 env:
@@ -27,15 +21,7 @@ env:
 
  
 build:
-  pre_ci:
-    - docker build --rm -t=quay.io/vidyar/beta-sample-img-app .
-
-  pre_ci_boot:
-    image_name: quay.io/vidyar/beta-sample-img-app 
-    image_tag: latest
-    pull: false
-    options: '--privileged=false --net=bridge -e FOO=true -e BOO=false'
-
+  
   ci:
     - ps -eax
     - ls -al
@@ -43,16 +29,7 @@ build:
     - npm install
     - grunt
 
-  post_ci:
-    - docker push quay.io/vidyar/beta-sample-img-app
-
-  smoke_test:
-    - sudo ls /
-
-deploy:
-  pre_build:
-    - ls
-    - ls -al
+  
 
 integrations:
   notification:
