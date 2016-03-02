@@ -1,10 +1,8 @@
 # Language setting
 language: scala
 
-# Version number
-#jdk:
- # - oraclejdk7
-
+scala:
+      - 2.11.0
 env:
   global:
     - FOO=FUBU
