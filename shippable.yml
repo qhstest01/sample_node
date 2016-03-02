@@ -1,9 +1,9 @@
 # Language setting
-language: ruby
+language: java
 
 # Version number
-rvm:
-  - "2.1.2"
+jdk:
+  - oraclejdk7
 
 env:
   global:
@@ -14,10 +14,10 @@ env:
 
 build:
   pre_ci:
-    - docker build -t=shippabledocker/sample_node .
+    - docker build -t=shippabledocker/sample_java .
 
   pre_ci_boot:
-    image_name: shippabledocker/sample_node
+    image_name: shippabledocker/sample_java
     image_tag: latest
     pull: false
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
@@ -27,7 +27,7 @@ build:
     - ls -al
 
   post_ci:
-    - docker push shippabledocker/sample_node
+    - docker push shippabledocker/sample_java
 
 integrations:
   hub:
