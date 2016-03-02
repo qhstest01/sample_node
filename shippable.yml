@@ -1,9 +1,9 @@
 # Language setting
-language: java
+language: scala
 
 # Version number
-jdk:
-  - oraclejdk7
+#jdk:
+ # - oraclejdk7
 
 env:
   global:
