@@ -25,7 +25,8 @@ build:
   ci:
     - ps -eax
     - ls -al
-
+    - shippable_retry sudo apt-get update
+   
   post_ci:
     - docker push shippabledocker/sample_node
 
