@@ -14,27 +14,17 @@ env:
     - M1=one
 
 build:
-  pre_ci:
-    - docker build -t=shippabledocker/sample-node .
-
-  pre_ci_boot:
-    image_name: shippabledocker/sample-node
-    image_tag: latest
-    pull: false
-    options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
-
-
+  
   ci:
     - ps -eax
     - ls -al
 
   post_ci:
-    - docker push shippabledocker/sample-node
+    - docker build -t=shippabledocker/sample-node:$BRANCH.$BUILD_NUMBER .
+    - docker push shippabledocker/sample-node:$BRANCH.$BUILD_NUMBER
 
 integrations:
   hub:
     - integrationName: ship-docker
       type: docker
-      branches:
-        only:
-          - master
+     
