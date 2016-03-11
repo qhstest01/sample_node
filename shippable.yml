@@ -28,7 +28,7 @@ build:
     - ls -al
 
   post_ci:
-    - docker push shippabledocker/sample_node
+    - docker push shippabledocker/sample_node:latest
 
 integrations:
   hub:
