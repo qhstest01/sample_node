@@ -32,6 +32,11 @@ build:
 
   post_ci:
     - docker push shippabledocker/sample-node-test
+    
+  on_success:
+    - echo "build success"
+  on_failure:
+    - echo "build failed"
 
 integrations:
   hub:
