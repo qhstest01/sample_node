@@ -6,12 +6,7 @@ node_js:
   - "0.12"
 
 env:
-  global:
-    - FOO=FUBU
-
-  matrix:
-    - M1=one
-
+  CI=true
 
 build:
   
