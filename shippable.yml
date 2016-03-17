@@ -18,10 +18,10 @@ env:
 
 build:
   pre_ci:
-    - docker build -t=shippabledocker/sample-node-test .
+    - docker build -t=shippabledocker/sample-node-test1 .
 
   pre_ci_boot:
-    image_name: shippabledocker/sample-node-test
+    image_name: shippabledocker/sample-node-test1
     image_tag: latest
     pull: false
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
@@ -32,7 +32,7 @@ build:
     - ls -al
 
   post_ci:
-    - docker push shippabledocker/sample-node-test
+    - docker push shippabledocker/sample-node-test1
 
 integrations:
   hub:
