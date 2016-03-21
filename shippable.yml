@@ -14,13 +14,13 @@ env:
     - M1=one
 
 build:
-  pre_ci:
-    - docker build -t=shippabledocker/sample_node .
+ # pre_ci:
+   # - docker build -t=shippabledocker/sample_node_pvt .
 
   pre_ci_boot:
-    image_name: shippabledocker/sample_node
+    image_name: shippabledocker/sample_node_pvt
     image_tag: latest
-    pull: false
+    pull: true
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
 
   ci:
@@ -28,7 +28,10 @@ build:
     - ls -al
 
   post_ci:
-    - docker push shippabledocker/sample_node:latest
+    - docker build -t=shippabledocker/sample_node_pvt .
+
+    - docker push shippabledocker/sample_node_pvt:latest
+    
 
 integrations:
   hub:
