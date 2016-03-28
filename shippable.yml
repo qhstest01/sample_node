@@ -12,23 +12,8 @@ env:
 
   matrix:
     - M1=one
+    - M2=two
 
-build:
-  
-  ci:
-    - ps -eax
-    - ls -al
-
-
-  post_ci:
-#    - docker build -t=shippabledocker/sample_node-beta .
- #   - docker push shippabledocker/sample_node-beta
-     - docker build -t=vidyar/sample_node-beta .
-     - docker push vidyar/sample_node-beta
-
-
-integrations:
-  hub:
-    - integrationName: docker
-      type: "docker"
-      
+branches:
+  only:
+    - "*lang"
