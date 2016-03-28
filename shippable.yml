@@ -1,5 +1,5 @@
 # Language setting
-language: scala
+language: none
 
 scala:
       - 2.11.0
