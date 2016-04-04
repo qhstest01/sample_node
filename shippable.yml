@@ -1,7 +1,6 @@
 # Language setting
 language: none
 
-
 # Version number
 node_js:
   - "0.12"
