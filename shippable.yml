@@ -30,4 +30,7 @@ integrations:
   hub:
     - integrationName: docker
       type: "docker"
+      branches:
+        only:
+          - post-ci
       
