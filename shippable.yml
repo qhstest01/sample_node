@@ -28,9 +28,6 @@ build:
 
 integrations:
   hub:
-    - integrationName: docker
+    - integrationName: "docker"
       type: "docker"
-      branches:
-        only:
-          - post-ci
       
