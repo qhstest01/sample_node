@@ -24,13 +24,15 @@ build:
  #   - docker push shippabledocker/sample_node-beta
      - docker build -t=vidyar/sample_node-beta .
      - docker push vidyar/sample_node-beta
+     - docker build --rm -t=quay.io/shippablequay/sample_node_pdr:test .
+     - docker push quay.io/shippablequay/sample_node_pdr:test
+    
 
 
 integrations:
   hub:
     - integrationName: "docker"
       type: "docker"
-      branches:
-        except:
-          - "post-ci"
+    - integrationName: ship-quay
+      type: "quay.io"
       
