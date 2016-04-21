@@ -31,6 +31,6 @@ integrations:
     - integrationName: "docker"
       type: "docker"
       branches:
-        except:
+        only:
           - "post-ci"
       
