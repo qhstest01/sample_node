@@ -22,8 +22,8 @@ build:
   post_ci:
 #    - docker build -t=shippabledocker/sample_node-beta .
  #   - docker push shippabledocker/sample_node-beta
-     - docker build -t=vidyar/sample_node-beta .
-     - docker push vidyar/sample_node-beta
+     - docker build -t=vidyar/sample-node-test .
+     - docker push vidyar/sample-node-test
 
 
 integrations:
