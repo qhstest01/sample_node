@@ -35,6 +35,7 @@ build:
   post_ci:
     - docker push shippabledocker/sample-node-test
 
+
 integrations:
   hub:
     - integrationName: ship-docker
