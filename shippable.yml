@@ -16,8 +16,8 @@ build:
     - ls -al
 
   post_ci:
-    - docker build -t=shippabledocker/sample-node:$BRANCH.$BUILD_NUMBER .
-    - docker push shippabledocker/sample-node:$BRANCH.$BUILD_NUMBER
+    - docker build -t=shiphitchcock2/sample-node:$BRANCH.$BUILD_NUMBER .
+    - docker push shiphitchcock2/sample-node:$BRANCH.$BUILD_NUMBER
 
 
 integrations:
