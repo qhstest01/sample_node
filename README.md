@@ -2,6 +2,7 @@ Node.js Sample!
 =================
 
 latest builds to deploy
+test
 
 A simple Node.js application with tests.
 
