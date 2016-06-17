@@ -14,11 +14,11 @@ env:
 
 build:
   pre_ci:
-    - docker build -t=shiphitchcock2/sample-node-test .
+    - docker build -t=shiphitchcock2/sample-node-test:$BRANCH.$BUILD_NUMBER  .
 
   pre_ci_boot:
-    image_name: shiphitchcock2/sample-node-test
-    image_tag: latest
+    image_name: shiphitchcock2/sample-node-test:$BRANCH.$BUILD_NUMBER 
+    image_tag: $BRANCH.$BUILD_NUMBER 
     pull: false
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
 
@@ -29,7 +29,7 @@ build:
    # - sleep 6m
 
   post_ci:
-    - docker push shiphitchcock2/sample-node-test
+    - docker push shiphitchcock2/sample-node-test:$BRANCH.$BUILD_NUMBER 
 
 integrations:
   hub:
