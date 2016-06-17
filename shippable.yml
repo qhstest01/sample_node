@@ -18,7 +18,7 @@ build:
 
   pre_ci_boot:
     image_name: shiphitchcock2/sample-node-test:$BRANCH.$BUILD_NUMBER 
-    image_tag: $BRANCH.$BUILD_NUMBER 
+    image_tag: latest
     pull: false
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
 
