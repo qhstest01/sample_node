@@ -35,6 +35,6 @@ build:
 
 integrations:
   hub:
-    - integrationName: shipdock12
+    - integrationName: ship-dock12
       type: docker
       
