@@ -11,6 +11,7 @@ env:
 
   matrix:
     - M1=one
+    - secure: AmwrwPQ3pwRt1wwD7hSeJDZ+Zx6qNQVp+3kdMjD+BUJ0H6As23S2IxLJxNsOznsjTZlKPEu6SbzccXr1CtaQswPE4hEyi1DO175t21Pa8vDgKgUbHERCY0PBVZ4IJnVo1bsxE/BWOtUaPfevgucsUXQ7WcrInxNVHeAGqjbkk2pj97i3rHddzlS0cHXEYFev97tExe3E8iNYg/O4cTPD2NkD5WIbwtbq/TAcWmmupsCuVHtd4E4BUW9Z+euPfYP6EKm+0/JMD0eRaVu5GN+Agss3kg8ujzf83FgQN0exgRYcEaGzdKPHnzjJYPU1EYoF/KYewFiVC3EBfW9i2Rt0Yg== 
    
 
 
@@ -28,6 +29,7 @@ build:
   ci:
     - ps -eax
     - ls -al
+    - echo $key1
    # - sleep 6m
 
   post_ci:
